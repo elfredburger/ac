@@ -1,6 +1,7 @@
-import { Injectable } from '@nestjs/common';
+import { HttpStatus, Injectable, Request } from '@nestjs/common';
 import { BuyersService } from 'src/buyer/buyers.service';
 import * as argon from 'argon2'
+
 @Injectable()
 export class AuthService {
     constructor(private buyersService:BuyersService){}
@@ -13,4 +14,4 @@ export class AuthService {
         }
         return null;
     }
-}
+    }

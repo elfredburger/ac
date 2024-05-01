@@ -9,8 +9,9 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { BuyerController } from './buyer/buyers.controller';
 import { BuyersService } from './buyer/buyers.service';
+import { SubscriptionModule } from './subscription/subscription.module';
 @Module({
-  imports: [ AuthModule,BuyersModule],
+  imports: [ AuthModule,BuyersModule,SubscriptionModule],
   controllers: [  AppController],
   providers: [ AppService],
 })
