@@ -31,6 +31,7 @@ export class BuyerController {
 
   @Get("get")
   getone(@Body() buyerPayload: buyerDto) {
+    console.log(buyerPayload);
     return this.buyersService.findOne(buyerPayload.email);
   }
 }
