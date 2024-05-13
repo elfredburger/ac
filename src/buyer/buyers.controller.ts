@@ -14,23 +14,23 @@ import {
   ParseIntPipe,
   HttpException,
   HttpStatus,
-} from '@nestjs/common';
-import { buyerDto } from 'src/buyer/dto/buyer.dto';
-import { BuyersService } from 'src/buyer/buyers.service';
-import { SubscriptionDto } from '../subscription/dto/subscriprion.dto';
+} from "@nestjs/common";
+import { buyerDto } from "src/buyer/dto/buyer.dto";
+import { BuyersService } from "src/buyer/buyers.service";
+import { SubscriptionDto } from "../subscription/dto/subscriprion.dto";
 
-@Controller('buyers')
+@Controller("buyers")
 export class BuyerController {
   constructor(private buyersService: BuyersService) {}
 
-  @Post('create')
+  @Post("create")
   @UsePipes(new ValidationPipe({ whitelist: true }))
   create(@Body() buyerPayload: buyerDto) {
     return this.buyersService.createBuyer(buyerPayload);
   }
 
-  @Get('get')
+  @Get("get")
   getone(@Body() buyerPayload: buyerDto) {
-    return this.buyersService.findOne(buyerPayload.email);
+    return "this.buyersService.findOne(buyerPayload.email)";
   }
 }
